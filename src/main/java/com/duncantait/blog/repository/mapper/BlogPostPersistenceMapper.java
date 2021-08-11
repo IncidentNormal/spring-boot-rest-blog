@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper
+@Mapper(uses = BlogCommentPersistenceMapper.class)
 public interface BlogPostPersistenceMapper {
     PersistentBlogPost toPersistentEntity(BlogPost blogPost);
     BlogPost toDomain(PersistentBlogPost persistentPost);

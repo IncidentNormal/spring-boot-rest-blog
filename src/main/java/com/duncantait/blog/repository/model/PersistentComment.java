@@ -51,6 +51,7 @@ public class PersistentComment {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "fk_post", nullable = false)
+    @ToString.Exclude
     private PersistentBlogPost post;
 
     @Override

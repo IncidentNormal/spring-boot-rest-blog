@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -19,4 +20,6 @@ public class BlogPost {
     String body;
     @Builder.Default
     Set<BlogTag> tags = Set.of();
+    @Builder.Default
+    List<BlogComment> comments = List.of();
 }

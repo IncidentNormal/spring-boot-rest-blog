@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class BlogComment {
-    String id;
+    Long id;
     Long postId;
     LocalDateTime creationDate;
     String title;

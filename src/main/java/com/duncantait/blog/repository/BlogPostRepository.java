@@ -1,6 +1,5 @@
 package com.duncantait.blog.repository;
 
-import com.duncantait.blog.model.BlogPost;
 import com.duncantait.blog.repository.model.PersistentBlogPost;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

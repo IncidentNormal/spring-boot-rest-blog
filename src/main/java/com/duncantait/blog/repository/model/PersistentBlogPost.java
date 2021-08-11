@@ -54,6 +54,7 @@ public class PersistentBlogPost {
     private LocalDateTime creationDate;
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @ToString.Exclude
     private List<PersistentComment> comments;
 
     @ManyToMany(cascade = { CascadeType.ALL })
@@ -62,11 +63,6 @@ public class PersistentBlogPost {
             inverseJoinColumns = {@JoinColumn(name = "POST_id", referencedColumnName = "id")})
     @ToString.Exclude
     private Set<PersistentTag> tags;
-
-//    @NotNull
-//    @ManyToOne
-//    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-//    private PersistentBlogUser author;
 
     public void addComment(PersistentComment comment){
         this.comments.add(comment);
