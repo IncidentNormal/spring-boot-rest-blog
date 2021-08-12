@@ -1,3 +1,7 @@
+info:
+  build:
+    version: @project.version@
+    projectName: @project.artifactId@
 spring:
   application:
     name: BLOG-V1

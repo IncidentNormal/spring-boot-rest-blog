@@ -25,7 +25,7 @@ ENV APPNAME=$APPNAME
 ARG VERSION
 ENV VERSION=$VERSION
 
-COPY $MSNAME-svc-$VERSION.jar /apps/sb/
+COPY target/$APPNAME-$VERSION.jar /apps/sb/
 
 RUN chmod +x /apps/startup/startup.sh
 RUN chown blog_user:blog_user -R /apps
