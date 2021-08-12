@@ -1,5 +1,17 @@
 # Getting Started
 
+## Overview
+
+Demo application - BE REST API for a blog platform, driven by Spring Boot & Java 11.
+
+Functionality:
+- Create post
+- Add comment to post
+- Get all posts
+- Get all posts by tags
+
+Persistence is currently an in-memory H2 database (so will not persist between application runs). But this can easily be switched out for something more permanent.
+
 ## Building / running in Docker container
 
 1. Compile the application
