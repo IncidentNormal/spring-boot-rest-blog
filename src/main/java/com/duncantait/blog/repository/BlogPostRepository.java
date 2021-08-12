@@ -9,8 +9,9 @@ import java.util.Collection;
 import java.util.List;
 
 @Repository
-public interface BlogPostRepository extends JpaRepository<PersistentBlogPost, Long> {
+public interface BlogPostRepository extends JpaRepository<PersistentBlogPost, Long>, BlogPostCriteriaQueries {
 
-    @Query("SELECT s FROM PersistentBlogPost s JOIN s.tags t WHERE t.name IN :tags")
-    List<PersistentBlogPost> findAllByTags(Collection<String> tags);
+    @Query("SELECT DISTINCT s FROM PersistentBlogPost s JOIN s.tags t WHERE t.name IN :tags")
+    List<PersistentBlogPost> findByTags(Collection<String> tags);
+
 }

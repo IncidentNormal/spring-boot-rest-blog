@@ -43,7 +43,8 @@ public class BlogPostServiceImpl implements BlogPostService {
     @Override
     public List<BlogPost> getAllByTags(List<BlogTag> tags) {
         Set<String> strTags = tags.stream().map(BlogTag::getName).collect(Collectors.toSet());
-        List<PersistentBlogPost> entities = repository.findAllByTags(strTags);
+        List<PersistentBlogPost> entities = repository.findByTagsWithCriteriaQuery(strTags);
+//        List<PersistentBlogPost> entities = repository.findByTags(strTags);
         log.info("fetched {}", entities);
         List<BlogPost> blogPosts = mapper.toDomain(entities);
         log.info("mapped {}", blogPosts);

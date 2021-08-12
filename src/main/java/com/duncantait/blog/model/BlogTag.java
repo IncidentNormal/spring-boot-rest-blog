@@ -1,15 +1,23 @@
 package com.duncantait.blog.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Value;
+import org.apache.commons.lang3.StringUtils;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class BlogTag {
-    String name;
+
+    private String name;
+
+    public BlogTag(String name) {
+        if (StringUtils.isEmpty(name)) {
+            throw new IllegalArgumentException("tag name cannot be null");
+        }
+        this.name = name;
+    }
+
+
 }
