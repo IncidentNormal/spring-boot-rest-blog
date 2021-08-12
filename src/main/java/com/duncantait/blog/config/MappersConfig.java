@@ -1,6 +1,5 @@
 package com.duncantait.blog.config;
 
-import com.duncantait.blog.model.BlogComment;
 import com.duncantait.blog.model.mapper.BlogCommentMapper;
 import com.duncantait.blog.model.mapper.BlogPostMapper;
 import com.duncantait.blog.repository.mapper.BlogCommentPersistenceMapper;

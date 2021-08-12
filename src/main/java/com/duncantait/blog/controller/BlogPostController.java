@@ -1,9 +1,9 @@
 package com.duncantait.blog.controller;
 
 import com.duncantait.blog.controller.model.BlogPostRequest;
-import com.duncantait.blog.model.mapper.BlogPostMapper;
 import com.duncantait.blog.model.BlogPost;
 import com.duncantait.blog.model.BlogTag;
+import com.duncantait.blog.model.mapper.BlogPostMapper;
 import com.duncantait.blog.service.BlogPostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

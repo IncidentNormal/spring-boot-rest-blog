@@ -9,15 +9,18 @@ import java.util.List;
 
 public class RequestFactory {
 
-    private static final ObjectMapper mapper = new ObjectMapper();
+    private static final List<String> DEFAULT_TAGS =  List.of("tag1", "tag2", "tag3");
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    public static String validCreateBlogPostRequestJson() throws JsonProcessingException {
+    public static String validCreateBlogPostRequestJson(String... tags) throws JsonProcessingException {
+        List<String> tagList = (tags.length == 0) ? DEFAULT_TAGS : List.of(tags);
+
         BlogPostRequest request = new BlogPostRequest();
         request.setTitle("title");
-        request.setTags(List.of("tag1", "tag2", "tag3"));
+        request.setTags(tagList);
         request.setBody("some text some text blah blah 123....1!");
 
-        return mapper.writeValueAsString(request);
+        return MAPPER.writeValueAsString(request);
     }
 
     public static String validCreateCommentRequestJson() throws JsonProcessingException {
@@ -25,6 +28,6 @@ public class RequestFactory {
         request.setTitle("comment title");
         request.setBody("a comment some text x y z a b c!");
 
-        return mapper.writeValueAsString(request);
+        return MAPPER.writeValueAsString(request);
     }
 }

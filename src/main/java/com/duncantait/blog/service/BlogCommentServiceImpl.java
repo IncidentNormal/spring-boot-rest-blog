@@ -7,7 +7,6 @@ import com.duncantait.blog.repository.mapper.BlogCommentPersistenceMapper;
 import com.duncantait.blog.repository.model.PersistentBlogPost;
 import com.duncantait.blog.repository.model.PersistentComment;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.jpa.provider.HibernateUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
